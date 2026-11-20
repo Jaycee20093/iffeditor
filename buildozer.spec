@@ -4,6 +4,12 @@
 # See the end of the file for more details and warnings about common mistakes.
 
 [app]
+android.api = 33
+android.minapi = 24
+android.ndk = 25b
+android.accept_sdk_license = True
+p4a.branch = develop
+
 
 # (str) Title of your application
 title = IFF EDITOR BY JC2K
@@ -141,7 +147,6 @@ fullscreen = 0
 # agreements. This is intended for automation only. If set to False,
 # the default, you will be shown the license when first running
 # buildozer.
-android.accept_sdk_license = True
 
 # (str) Android entry point, default is ok for Kivy-based app
 #android.entrypoint = org.kivy.android.PythonActivity
@@ -496,10 +501,6 @@ warn_on_root = 1
 #
 #   Environment variable overrides have priority over profile overrides.
 
-android.api = 33
 
-android.minapi = 24
 
-android.ndk = 25b
 
-p4a.branch = develop

@@ -7,16 +7,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - name: Cache Buildozer
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.buildozer
-            ~/.gradle
-            ~/.android
-          key: buildozer-py311-v1
-          restore-keys: |
-            buildozer-py311-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
