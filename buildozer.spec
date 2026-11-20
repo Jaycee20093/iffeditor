@@ -42,7 +42,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy
+requirements = python3==3.11.6,kivy==2.3.0,Pillow
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -495,3 +495,11 @@ warn_on_root = 1
 #        buildozer --profile demo android debug
 #
 #   Environment variable overrides have priority over profile overrides.
+
+android.api = 33
+
+android.minapi = 24
+
+android.ndk = 25b
+
+p4a.branch = develop
