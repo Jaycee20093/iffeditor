@@ -5,6 +5,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
+    env:
+      ANDROID_NDK_ROOT: ""
+      ANDROID_NDK_HOME: ""
+      ANDROID_HOME: /home/runner/.buildozer/android/platform/android-sdk
+      ANDROIDSDK: /home/runner/.buildozer/android/platform/android-sdk
+      ANDROIDNDK: /home/runner/.buildozer/android/platform/android-ndk-r25b
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -23,6 +29,9 @@ jobs:
           pip install --upgrade buildozer cython==0.29.36
       - name: Build APK
         run: |
+          unset ANDROID_NDK_ROOT
+          unset ANDROID_NDK_HOME
+          rm -rf /usr/local/lib/android/sdk/ndk/27.3.13750724 || true
           buildozer -v android debug
       - name: Upload APK
         uses: actions/upload-artifact@v4
